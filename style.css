@@ -1,0 +1,504 @@
+body {
+    background-color: rgb(0, 0, 0);
+    margin:0; padding:0;
+    font-size: 18px;
+   
+}
+
+/* The anchors are used for GitHub Link on the Contact Me tile */
+
+a, a:visited{
+    color: white;
+}
+
+a:hover {
+    color:rgb(18, 174, 174);
+}
+
+/* Main Wrapper is displayed behind Tile Board */
+
+#mainWrapper {
+   background-color: black;
+    width:100vw; height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin:0; padding:0;
+}
+
+/* Tile Board Wrapper houses all 8 tiles */
+
+#tileBoardWrapper {
+    width:70vw; height:35vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin:0; padding:0;
+}
+
+.tiles {
+    width:25%; height:50%;
+    background-size: contain;
+    cursor: pointer;
+}
+.tiles:hover {
+    transform: scale(1.03);
+    transition: .2s;
+    box-shadow: rgb(68, 68, 68) 0px 0px 6px 2px;
+}
+#tileProfilePicture:hover {transform: scale(1);}
+
+#returnToTileBoard_BTN {
+    position: absolute;
+    left:6.5%; top:20px;
+    width:50px; height: 30px;
+    background-color: rgba(235, 235, 235, 0.608);
+    border-radius: 6px;
+    border:0px;
+    color:rgb(0, 0, 0);
+    display:none;
+    padding-bottom:4px;
+    box-sizing: border-box;
+    align-items: center; justify-content: center;
+}
+#returnToTileBoard_BTN:hover {cursor:pointer;color:rgb(0, 0, 0);background-color: rgb(255, 255, 255); }
+/*Below are all the images for the main Tiles*/
+
+#tileProfilePicture {
+    box-shadow: rgb(68, 68, 68) 0px 0px 0px 0px;
+    border-radius: 20px;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 500% 500%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%};
+} 
+#profileImage { border-top-left-radius: 8px;}
+
+#profileImage2 {display:none; border-top-left-radius: 8px;
+}
+
+#aboutMe {
+    background-image: url("aboutMe.PNG");
+}
+#aboutMe:hover {
+    background-image: url("aboutMeHover.PNG");
+}
+
+#experience {
+    background-image: url("experience.PNG");
+}
+#portfolio {
+    background-image: url("portfolio.PNG");
+    border-top-right-radius: 8px;
+}
+#skills {
+    background-image: url("skills.PNG");
+    border-bottom-left-radius: 8px;
+}
+
+#interests {background-image: url("favorites.PNG");}
+#education {background-image: url("credentials.PNG");}
+#contact {background-image: url("contact.PNG");
+border-bottom-right-radius: 8px;
+}
+/* This is the display page once a tile is selected */
+
+
+.displayUI {
+    width:100vw; height:100vh;
+    display: none;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right, rgb(34, 34, 36), #262627 50%);
+    border-radius: 0px;
+    justify-content: center; align-items: center;
+}
+
+/* Tile is a child of displayUI */
+
+.displayUITile {
+    width: 90%; height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: rgb(33,33,33);
+    background: linear-gradient(140deg, rgba(33,33,33,1) 0%, rgba(61,61,61,1) 100%);
+}
+
+/* Below is the display for ABOUT ME */
+
+#display_AboutMe, #display_Skills, #display_Contact  {
+    background-image: url("UIBackground1.PNG");
+    background-size: cover;
+}
+
+#display_Experience, #display_Interests  {
+    background-image: url("UIBackground2.PNG");
+    background-size: cover;
+}
+
+#display_Portfolio, #display_Education  {
+    background-image: url("UIBackground3.PNG");
+    background-size: cover;
+}
+
+
+.uI_Title {
+    font-size: 1.5em;
+    color:white; 
+    position: absolute;
+    top:20%;
+    padding: 10px 20px 10px 20px;
+    background-color: rgba(22, 21, 21, 0.308);
+    box-shadow: white 0px 0px 4px .1px;
+}
+.uI_Title:hover {color:#839bed; cursor:default;}
+
+.uI_Para {
+    color:white; 
+    position: absolute;
+    top:44%; 
+}
+
+#uI_Para_Experience {
+    position: absolute;
+    width:75%;
+    padding: 20px;
+    background-color: rgba(22, 21, 21, 0.308);
+}
+
+#certWrapper {
+    width: 70%; height:40%;
+    margin-top: 15vh;
+    align-self: center;
+    display:flex;
+    flex-direction: row;
+    gap:40px;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center; justify-content: center;
+}
+
+#educationInfo {
+    width: 90%;
+    color:white;
+    text-align: center;
+    font-size: .8rem;
+}
+
+#jsCert, #htmlCert {
+    width:40%;
+}
+
+/* Below are the Paragraphs for the 8 Tile UI's */
+
+#uI_Para_AboutMe {
+    color:rgb(255, 255, 255); 
+    position: absolute;
+    width:75%;
+    padding: 20px;
+    background-color: rgba(22, 21, 21, 0.308);
+}
+
+#uI_Para_Favorites {
+    width:75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+    background-color: rgba(22, 21, 21, 0.308);
+    padding: 20px;
+}
+
+#uI_Para_Skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+    width:65%;
+    background-color: rgba(22, 21, 21, 0.308);
+    padding: 20px;
+}
+
+#uI_Para_Contact {
+background-color: rgba(22, 21, 21, 0.308);
+padding: 20px 20px 20px 20px;
+}
+
+.skills_Logo {
+    width:120px; 
+}
+
+/* Below is the Housing for the PORTFOLIO Tile */
+
+#portfolioDisplayWrapper {
+    align-self: center;
+    margin-top:15vh;
+    width:750px; height:40%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:70px;justify-content: center;
+}
+
+
+#portfolio_Items_Wrapper {
+    position: absolute;
+    width:300px; height:300px;
+    background-image: linear-gradient(to right, rgb(60, 73, 103), rgb(35, 38, 62) 90%);
+    top:38%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+   
+}
+
+.portfolio_Item {
+    width:99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 40%;
+    height:47px;
+    font-size: .9rem;
+    background-color:rgb(255, 255, 255);
+}
+
+.portfolio_Item:hover {
+    color:black;
+    opacity: 90%;
+    cursor:pointer;
+    box-sizing: border-box;
+    border-bottom: #1ddde8 4px solid;
+    transform: scale(1.01);
+    transform: translateY(-2px);
+    transition: .5s;
+    background-image:linear-gradient(90deg, rgba(255, 255, 255, 0.565), rgba(255, 255, 255, 0.73) 20%);
+}
+
+.portfolio_display {
+    position: absolute;
+    height:300px;
+    width:99%;
+    display:none;
+    justify-content: center;
+    background-color:rgb(255, 255, 255);
+}
+
+.porfolio_Display_Title {
+    font-size: .9rem;
+    left:10px;
+    position: absolute;
+}
+
+.portfolio_Desc {
+    color: #0a0433;
+    position: absolute;
+    top:50px;
+    padding: 0px 12px 0px 12px;
+    font-size: .7rem;
+}
+
+.showButton {
+    position: absolute;
+    display:none;
+    justify-content: center;
+    font-size: .6rem;
+    height:min-content; width:90%;
+    text-align: center;
+    background-color: #81b7ca50;
+    top:160px;
+    padding:10px;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+#foxmithLink {
+    position: absolute;
+    top:120px;
+    display:none;
+    font-size: .8rem;
+}
+#lC_Link {
+    position: absolute;
+    top:120px;
+    display:none;
+    font-size: .8rem;
+}
+
+#pItem3Form {
+margin-top:15px;
+padding-bottom: 15px;
+}
+
+#item3Sub{
+    height:20px; width:60px;
+    border-radius: 6px;
+    background-color: rgb(223, 188, 188);
+}
+.portItem3Input {
+    height:20px; width:100px;
+}
+
+
+#returnFromPortfolioItem {
+    position: absolute;
+    right:10px; top:10px;
+    background-color: rgb(0, 0, 0);
+    width:40px; height:20px;
+    border-radius: 6px;
+    color:white;
+    font-size: .6rem;
+    display: flex;
+    cursor:pointer;
+    align-items: center; justify-content: center;
+}
+
+#returnFromPortfolioItem:hover {
+    background-color: #0a0433;
+}
+
+
+.grey {color:rgb(201, 201, 201)}
+.mountain_Text {color:rgb(131, 243, 131);}
+.beach_Text {color:rgb(131, 170, 243);}
+.warm_Text {color:rgb(243, 131, 131);}
+.cold_Text {color:rgb(131, 221, 243);}
+
+hr {background-color: black;}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    
+    .tiles {
+        width:50%; height:25%;
+    }
+    #tileBoardWrapper {
+        display:flex; flex-direction: row;
+        flex-wrap: wrap;
+        width:45vh;height:90vh;
+    }
+   
+    #aboutMe {
+        border-top-right-radius: 8px;
+    } 
+    #portfolio {
+        border-top-right-radius: 0px;
+    }
+    #education {
+        border-bottom-left-radius: 8px;
+    }
+    #skills {
+        border-bottom-left-radius: 0px;
+    }
+    .skills_Logo {
+        width:90px; 
+    }
+
+    #uI_Para_AboutMe {
+        font-size: .8em;
+    }
+    #uI_Para_Experience {
+        font-size: .8em;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 820px) and (max-height: 430px) {
+    #tileBoardWrapper {
+        width:80vw; height:40vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tiles {
+        width:25%; height:50%;
+        background-size: contain;
+    }
+    #tileProfilePicture {
+        border-top-left-radius: 8px;
+    }
+    #portfolio {
+        border-top-right-radius: 8px;
+    }
+    #skills {
+        border-bottom-left-radius: 8px;
+    }
+    #contact {
+        border-bottom-right-radius: 8px;
+    }
+    #aboutMe {
+        border-top-right-radius: 0px;
+    } 
+    #portfolio {
+        border-top-right-radius: 8px;
+    }
+    #education {
+        border-bottom-left-radius: 0px;
+    }
+    .skills_Logo {
+        width:80px; 
+    }
+    #uI_AboutME_Para {
+        font-size: 12px;
+    }    
+    .portfolio_Apps {
+        height:150px; width:150px;
+ 
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .uI_Para {
+        top:29%;
+    }
+    .uI_Title {
+        top:15%;
+    }
+    
+    #jsCert, #htmlCert {
+        width:80%
+    }
+
+    #certWrapper {
+        margin-top:4vh;
+    }
+    .portfolio_Apps {
+        height:180px; width:180px;
+    }
+
+    #portfolioDisplayWrapper {
+        margin-top:2vh;
+    }
+
+}
