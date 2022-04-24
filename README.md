@@ -2,6 +2,8 @@
 - 👀 I’m interested in UI/UX Design, riddles, and the occasional gaming session on my PC.
 - 🌱 I’m currently learning React and Node js.
 
+- 🦕 I first googled 'how to code' in Oct. of 2021! 
+
 
 <!---
 WilliamTrueheart/WilliamTrueheart is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
