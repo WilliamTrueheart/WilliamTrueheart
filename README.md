@@ -2,7 +2,7 @@
 - 👀 I’m interested in UI/UX Design, riddles, and the occasional gaming session on my PC.
 - 🌱 I’m currently learning React and Node js.
 
-- 🦕 I first searched 'how to code' in Oct. of 2021! 
+- 🦕 I first searched 'what is programming' in Oct. of 2021! 
 
 
 <!---
